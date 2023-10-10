@@ -93,7 +93,7 @@ public class HelloApplication extends Application {
             String message = txt_message.getText();
             try {
                 p_OUT.println(message);
-                /*String line;
+                String line;
                 StringBuilder content = new StringBuilder();
                 while ((line = p_IN.readLine()) != null) {
                     if (line.contains("**TERM**")) {
@@ -103,10 +103,13 @@ public class HelloApplication extends Application {
                     }
                     content.append(line);
                     content.append(System.lineSeparator());
+                    this.txt_received.add(content.toString());
+                    content.setLength(0);
+                    break;
                 }
-                this.txt_received.add(content.toString());
-                content.setLength(0);*/
-            }finally {
+
+            }catch(IOException f) {
+                f.printStackTrace();
 
             }
         });
